@@ -93,6 +93,7 @@ export class AppComponent {
           this.uplodedData.push(this.selectedFile?.name);
           console.log("Uploaded files", this.uplodedData);
           this.fetchImageUrls(); //for loading all new file on ui
+          this.selectedFile=null
         }
       });
     } else {
