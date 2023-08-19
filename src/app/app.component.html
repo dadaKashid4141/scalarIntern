@@ -1,0 +1,38 @@
+<h3><i>{{'firebase' | uppercase}}</i></h3>
+<h2>Select file to upload</h2>
+<input type="file" (change)="handleFileInput($event)">
+<button [disabled]="selectedFile===null"   (click)="uploadFile()">Upload</button>
+{{title}}
+<hr>
+
+
+<!-- <div *ngFor="let file of uplodedData">
+    <a href="javascript:void(0);" (click)="downloadFile(file)">{{ file }}</a>
+  </div> -->
+<!-- 
+  <div *ngFor="let imageUrl of imageUrls">
+    <img [src]="imageUrl" alt="Firebase Image" style="width: 30%;">      <button (click)="downloadImage(imageUrl)">Download</button>
+    <hr>
+  </div> -->
+
+<!-- download on click-->
+
+<!-- ldr -->
+<div [class.blur]="isLoading" class="image-list">
+
+  <div *ngIf="imageUrls.length === 0" class="loader-container ldr">
+    <app-loader></app-loader>
+  </div>
+  <div *ngFor="let image of imageUrls"
+    style="display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 10px; padding: 5px;">
+    <div class="grid-item" style=" display: flex; gap: 10px; flex-direction: column; align-items: center;">
+      <img [src]="image.url" alt="Firebase Image" style="width: 450px; max-width: 100%; mix-blend-mode: multiply;">
+      <button *ngIf="!isLoading" (click)="downloadImage(image.url, image.originalFilename)">Download</button>
+    </div>
+  </div>
+</div>
+
+<!-- loader centerd -->
+<div *ngIf="isLoading" class="loader-container">
+  <app-loader></app-loader>
+</div>

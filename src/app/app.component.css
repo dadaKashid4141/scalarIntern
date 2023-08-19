@@ -1,0 +1,42 @@
+button:hover{
+    cursor: pointer;
+    transition: 0.4;
+    outline-offset: -7px;
+    border-radius: 11px;
+    outline: 3px solid cyan;
+
+}
+button[disabled] {
+    cursor: not-allowed;
+  }
+button{
+    width: 200px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    outline: 3px solid cyan;
+   transition: 0.3s;
+    outline-offset: 2px;
+
+}
+.ldr{
+    display: flex;
+    justify-content: center;
+}
+.blur {
+    filter: blur(3px); 
+  }
+
+  .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  }
